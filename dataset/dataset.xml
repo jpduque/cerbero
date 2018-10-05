@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method">
+		<instance>
+			<role name="Creator" element="com.ramesh.gof.factory.pizzaa.PizzaStore" />
+			<role name="FactoryMethod()" element="com.ramesh.gof.factory.pizzaa.PizzaStore::createPizza(java.lang.String):com.ramesh.gof.factory.pizzaa.Pizza" />
+		</instance>
+		<instance>
+			<role name="Creator" element="com.ramesh.gof.factory.pizzaa.PizzaIngredientFactory" />
+			<role name="FactoryMethod()" element="com.ramesh.gof.factory.pizzaa.PizzaIngredientFactory::createDough():com.ramesh.gof.factory.pizzaa.Dough" />
+			<role name="FactoryMethod()" element="com.ramesh.gof.factory.pizzaa.PizzaIngredientFactory::createSauce():com.ramesh.gof.factory.pizzaa.Sauce" />
+			<role name="FactoryMethod()" element="com.ramesh.gof.factory.pizzaa.PizzaIngredientFactory::createCheese():com.ramesh.gof.factory.pizzaa.Cheese" />
+			<role name="FactoryMethod()" element="com.ramesh.gof.factory.pizzaa.PizzaIngredientFactory::createPepperoni():com.ramesh.gof.factory.pizzaa.Pepperoni" />
+			<role name="FactoryMethod()" element="com.ramesh.gof.factory.pizzaa.PizzaIngredientFactory::createClam():com.ramesh.gof.factory.pizzaa.Clams" />
+		</instance>
+		<instance>
+			<role name="Creator" element="com.ramesh.gof.factory.pizzafm.PizzaStore" />
+			<role name="FactoryMethod()" element="com.ramesh.gof.factory.pizzafm.PizzaStore::createPizza(java.lang.String):com.ramesh.gof.factory.pizzafm.Pizza" />
+		</instance>
+		<instance>
+			<role name="Creator" element="com.ramesh.gof.prototype.Beast" />
+			<role name="FactoryMethod()" element="com.ramesh.gof.prototype.Beast::clone():com.ramesh.gof.prototype.Beast" />
+		</instance>
+		<instance>
+			<role name="Creator" element="com.ramesh.gof.prototype.Mage" />
+			<role name="FactoryMethod()" element="com.ramesh.gof.prototype.Mage::clone():com.ramesh.gof.prototype.Mage" />
+		</instance>
+		<instance>
+			<role name="Creator" element="com.ramesh.gof.prototype.Warlord" />
+			<role name="FactoryMethod()" element="com.ramesh.gof.prototype.Warlord::clone():com.ramesh.gof.prototype.Warlord" />
+		</instance>
+		<instance>
+			<role name="Creator" element="com.ramesh.gof.abstractfactory.KingdomFactory" />
+			<role name="FactoryMethod()" element="com.ramesh.gof.abstractfactory.KingdomFactory::createCastle():com.ramesh.gof.abstractfactory.Castle" />
+			<role name="FactoryMethod()" element="com.ramesh.gof.abstractfactory.KingdomFactory::createKing():com.ramesh.gof.abstractfactory.King" />
+			<role name="FactoryMethod()" element="com.ramesh.gof.abstractfactory.KingdomFactory::createArmy():com.ramesh.gof.abstractfactory.Army" />
+		</instance>
+	</pattern>
+	<pattern name="Prototype">
+		<instance>
+			<role name="Client" element="com.ramesh.gof.prototype.HeroFactoryImpl" />
+			<role name="Prototype" element="com.ramesh.gof.prototype.Beast" />
+			<role name="prototype" element="com.ramesh.gof.prototype.HeroFactoryImpl::beast:com.ramesh.gof.prototype.Beast" />
+			<role name="Operation()" element="com.ramesh.gof.prototype.HeroFactoryImpl::createBeast():com.ramesh.gof.prototype.Beast" />
+		</instance>
+		<instance>
+			<role name="Client" element="com.ramesh.gof.prototype.HeroFactoryImpl" />
+			<role name="Prototype" element="com.ramesh.gof.prototype.Mage" />
+			<role name="prototype" element="com.ramesh.gof.prototype.HeroFactoryImpl::mage:com.ramesh.gof.prototype.Mage" />
+			<role name="Operation()" element="com.ramesh.gof.prototype.HeroFactoryImpl::createMage():com.ramesh.gof.prototype.Mage" />
+		</instance>
+		<instance>
+			<role name="Client" element="com.ramesh.gof.prototype.HeroFactoryImpl" />
+			<role name="Prototype" element="com.ramesh.gof.prototype.Warlord" />
+			<role name="prototype" element="com.ramesh.gof.prototype.HeroFactoryImpl::warlord:com.ramesh.gof.prototype.Warlord" />
+			<role name="Operation()" element="com.ramesh.gof.prototype.HeroFactoryImpl::createWarlord():com.ramesh.gof.prototype.Warlord" />
+		</instance>
+	</pattern>
+	<pattern name="Singleton">
+		<instance>
+			<role name="Singleton" element="com.ramesh.gof.singleton.ThreadSafeLazyLoadedIvoryTower" />
+			<role name="uniqueInstance" element="com.ramesh.gof.singleton.ThreadSafeLazyLoadedIvoryTower::instance:com.ramesh.gof.singleton.ThreadSafeLazyLoadedIvoryTower" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.ramesh.gof.singleton.ThreadSafeDoubleCheckLocking" />
+			<role name="uniqueInstance" element="com.ramesh.gof.singleton.ThreadSafeDoubleCheckLocking::instance:com.ramesh.gof.singleton.ThreadSafeDoubleCheckLocking" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.ramesh.gof.singleton.IvoryTower" />
+			<role name="uniqueInstance" element="com.ramesh.gof.singleton.IvoryTower::INSTANCE:com.ramesh.gof.singleton.IvoryTower" />
+		</instance>
+	</pattern>
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adaptee" element="com.ramesh.gof.factory.pizzaa.PizzaIngredientFactory" />
+			<role name="Adapter" element="com.ramesh.gof.factory.pizzaa.CheesePizza" />
+			<role name="adaptee" element="com.ramesh.gof.factory.pizzaa.CheesePizza::ingredientFactory:com.ramesh.gof.factory.pizzaa.PizzaIngredientFactory" />
+			<role name="Request()" element="com.ramesh.gof.factory.pizzaa.CheesePizza::prepare():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.ramesh.gof.factory.pizzaa.PizzaIngredientFactory" />
+			<role name="Adapter" element="com.ramesh.gof.factory.pizzaa.ClamPizza" />
+			<role name="adaptee" element="com.ramesh.gof.factory.pizzaa.ClamPizza::ingredientFactory:com.ramesh.gof.factory.pizzaa.PizzaIngredientFactory" />
+			<role name="Request()" element="com.ramesh.gof.factory.pizzaa.ClamPizza::prepare():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.ramesh.gof.factory.pizzaa.PizzaIngredientFactory" />
+			<role name="Adapter" element="com.ramesh.gof.factory.pizzaa.PepperoniPizza" />
+			<role name="adaptee" element="com.ramesh.gof.factory.pizzaa.PepperoniPizza::ingredientFactory:com.ramesh.gof.factory.pizzaa.PizzaIngredientFactory" />
+			<role name="Request()" element="com.ramesh.gof.factory.pizzaa.PepperoniPizza::prepare():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.ramesh.gof.factory.pizzaa.PizzaIngredientFactory" />
+			<role name="Adapter" element="com.ramesh.gof.factory.pizzaa.VeggiePizza" />
+			<role name="adaptee" element="com.ramesh.gof.factory.pizzaa.VeggiePizza::ingredientFactory:com.ramesh.gof.factory.pizzaa.PizzaIngredientFactory" />
+			<role name="Request()" element="com.ramesh.gof.factory.pizzaa.VeggiePizza::prepare():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.ramesh.gof.bridge.secondexample.Enchantment" />
+			<role name="Adapter" element="com.ramesh.gof.bridge.secondexample.Hammer" />
+			<role name="adaptee" element="com.ramesh.gof.bridge.secondexample.Hammer::enchantment:com.ramesh.gof.bridge.secondexample.Enchantment" />
+			<role name="Request()" element="com.ramesh.gof.bridge.secondexample.Hammer::wield():void" />
+			<role name="Request()" element="com.ramesh.gof.bridge.secondexample.Hammer::swing():void" />
+			<role name="Request()" element="com.ramesh.gof.bridge.secondexample.Hammer::unwield():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.ramesh.gof.bridge.secondexample.Enchantment" />
+			<role name="Adapter" element="com.ramesh.gof.bridge.secondexample.Sword" />
+			<role name="adaptee" element="com.ramesh.gof.bridge.secondexample.Sword::enchantment:com.ramesh.gof.bridge.secondexample.Enchantment" />
+			<role name="Request()" element="com.ramesh.gof.bridge.secondexample.Sword::wield():void" />
+			<role name="Request()" element="com.ramesh.gof.bridge.secondexample.Sword::swing():void" />
+			<role name="Request()" element="com.ramesh.gof.bridge.secondexample.Sword::unwield():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.ramesh.gof.prototype.Beast" />
+			<role name="Adapter" element="com.ramesh.gof.prototype.HeroFactoryImpl" />
+			<role name="adaptee" element="com.ramesh.gof.prototype.HeroFactoryImpl::beast:com.ramesh.gof.prototype.Beast" />
+			<role name="Request()" element="com.ramesh.gof.prototype.HeroFactoryImpl::createBeast():com.ramesh.gof.prototype.Beast" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.ramesh.gof.prototype.Mage" />
+			<role name="Adapter" element="com.ramesh.gof.prototype.HeroFactoryImpl" />
+			<role name="adaptee" element="com.ramesh.gof.prototype.HeroFactoryImpl::mage:com.ramesh.gof.prototype.Mage" />
+			<role name="Request()" element="com.ramesh.gof.prototype.HeroFactoryImpl::createMage():com.ramesh.gof.prototype.Mage" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.ramesh.gof.prototype.Warlord" />
+			<role name="Adapter" element="com.ramesh.gof.prototype.HeroFactoryImpl" />
+			<role name="adaptee" element="com.ramesh.gof.prototype.HeroFactoryImpl::warlord:com.ramesh.gof.prototype.Warlord" />
+			<role name="Request()" element="com.ramesh.gof.prototype.HeroFactoryImpl::createWarlord():com.ramesh.gof.prototype.Warlord" />
+		</instance>
+	</pattern>
+	<pattern name="Command">
+		<instance>
+			<role name="Receiver" element="com.ramesh.gof.command.firstexample.Document" />
+			<role name="ConcreteCommand" element="com.ramesh.gof.command.firstexample.ActionOpen" />
+			<role name="receiver" element="com.ramesh.gof.command.firstexample.ActionOpen::doc:com.ramesh.gof.command.firstexample.Document" />
+			<role name="Execute()" element="com.ramesh.gof.command.firstexample.ActionOpen::execute():void" />
+		</instance>
+		<instance>
+			<role name="Receiver" element="com.ramesh.gof.command.firstexample.Document" />
+			<role name="ConcreteCommand" element="com.ramesh.gof.command.firstexample.ActionSave" />
+			<role name="receiver" element="com.ramesh.gof.command.firstexample.ActionSave::doc:com.ramesh.gof.command.firstexample.Document" />
+			<role name="Execute()" element="com.ramesh.gof.command.firstexample.ActionSave::execute():void" />
+		</instance>
+		<instance>
+			<role name="Receiver" element="com.ramesh.gof.command.secondexample.Target" />
+			<role name="ConcreteCommand" element="com.ramesh.gof.command.secondexample.InvisibilitySpell" />
+			<role name="receiver" element="com.ramesh.gof.command.secondexample.InvisibilitySpell::target:com.ramesh.gof.command.secondexample.Target" />
+			<role name="Execute()" element="com.ramesh.gof.command.secondexample.InvisibilitySpell::execute(com.ramesh.gof.command.secondexample.Target):void" />
+			<role name="Execute()" element="com.ramesh.gof.command.secondexample.InvisibilitySpell::undo():void" />
+			<role name="Execute()" element="com.ramesh.gof.command.secondexample.InvisibilitySpell::redo():void" />
+		</instance>
+		<instance>
+			<role name="Receiver" element="com.ramesh.gof.command.secondexample.Target" />
+			<role name="ConcreteCommand" element="com.ramesh.gof.command.secondexample.ShrinkSpell" />
+			<role name="receiver" element="com.ramesh.gof.command.secondexample.ShrinkSpell::target:com.ramesh.gof.command.secondexample.Target" />
+			<role name="Execute()" element="com.ramesh.gof.command.secondexample.ShrinkSpell::execute(com.ramesh.gof.command.secondexample.Target):void" />
+			<role name="Execute()" element="com.ramesh.gof.command.secondexample.ShrinkSpell::undo():void" />
+		</instance>
+	</pattern>
+	<pattern name="Composite" />
+	<pattern name="Decorator">
+		<instance>
+			<role name="Component" element="com.ramesh.gof.decorator.headfirst.Beverage" />
+			<role name="Decorator" element="com.ramesh.gof.decorator.headfirst.Milk" />
+			<role name="component" element="com.ramesh.gof.decorator.headfirst.Milk::beverage:com.ramesh.gof.decorator.headfirst.Beverage" />
+			<role name="Operation()" element="com.ramesh.gof.decorator.headfirst.Milk::cost():double" />
+		</instance>
+		<instance>
+			<role name="Component" element="com.ramesh.gof.decorator.headfirst.Beverage" />
+			<role name="Decorator" element="com.ramesh.gof.decorator.headfirst.Mocha" />
+			<role name="component" element="com.ramesh.gof.decorator.headfirst.Mocha::beverage:com.ramesh.gof.decorator.headfirst.Beverage" />
+			<role name="Operation()" element="com.ramesh.gof.decorator.headfirst.Mocha::cost():double" />
+		</instance>
+		<instance>
+			<role name="Component" element="com.ramesh.gof.decorator.headfirst.Beverage" />
+			<role name="Decorator" element="com.ramesh.gof.decorator.headfirst.Soy" />
+			<role name="component" element="com.ramesh.gof.decorator.headfirst.Soy::beverage:com.ramesh.gof.decorator.headfirst.Beverage" />
+			<role name="Operation()" element="com.ramesh.gof.decorator.headfirst.Soy::cost():double" />
+		</instance>
+		<instance>
+			<role name="Component" element="com.ramesh.gof.decorator.headfirst.Beverage" />
+			<role name="Decorator" element="com.ramesh.gof.decorator.headfirst.Whip" />
+			<role name="component" element="com.ramesh.gof.decorator.headfirst.Whip::beverage:com.ramesh.gof.decorator.headfirst.Beverage" />
+			<role name="Operation()" element="com.ramesh.gof.decorator.headfirst.Whip::cost():double" />
+		</instance>
+		<instance>
+			<role name="Component" element="com.ramesh.gof.proxy.Batch" />
+			<role name="Decorator" element="com.ramesh.gof.proxy.ProxyBatch" />
+			<role name="component" element="com.ramesh.gof.proxy.ProxyBatch::batch:com.ramesh.gof.proxy.Batch" />
+			<role name="Operation()" element="com.ramesh.gof.proxy.ProxyBatch::totalStudents():int" />
+			<role name="Operation()" element="com.ramesh.gof.proxy.ProxyBatch::registerStudent(java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="Component" element="com.ramesh.gof.decorator.Hostile" />
+			<role name="Decorator" element="com.ramesh.gof.decorator.SmartHostile" />
+			<role name="component" element="com.ramesh.gof.decorator.SmartHostile::decorated:com.ramesh.gof.decorator.Hostile" />
+			<role name="Operation()" element="com.ramesh.gof.decorator.SmartHostile::attack():void" />
+			<role name="Operation()" element="com.ramesh.gof.decorator.SmartHostile::getAttackPower():int" />
+			<role name="Operation()" element="com.ramesh.gof.decorator.SmartHostile::fleeBattle():void" />
+		</instance>
+		<instance>
+			<role name="Component" element="com.ramesh.gof.adapter.secondexample.BattleShip" />
+			<role name="Decorator" element="com.ramesh.gof.adapter.secondexample.Captain" />
+			<role name="component" element="com.ramesh.gof.adapter.secondexample.Captain::battleship:com.ramesh.gof.adapter.secondexample.BattleShip" />
+			<role name="Operation()" element="com.ramesh.gof.adapter.secondexample.Captain::fire():void" />
+			<role name="Operation()" element="com.ramesh.gof.adapter.secondexample.Captain::move():void" />
+		</instance>
+		<instance>
+			<role name="Component" element="com.ramesh.gof.state.secondexample.State" />
+			<role name="Decorator" element="com.ramesh.gof.state.secondexample.TVContext" />
+			<role name="component" element="com.ramesh.gof.state.secondexample.TVContext::tvState:com.ramesh.gof.state.secondexample.State" />
+			<role name="Operation()" element="com.ramesh.gof.state.secondexample.TVContext::doAction():void" />
+		</instance>
+	</pattern>
+	<pattern name="Observer">
+		<instance>
+			<role name="Observer" element="com.ramesh.gof.observer.WeatherObserver" />
+			<role name="Subject" element="com.ramesh.gof.observer.Weather" />
+			<role name="Notify()" element="com.ramesh.gof.observer.Weather::notifyObservers():void" />
+		</instance>
+	</pattern>
+	<pattern name="State">
+		<instance>
+			<role name="Context" element="com.ramesh.gof.factory.pizzaa.CheesePizza" />
+			<role name="State" element="com.ramesh.gof.factory.pizzaa.PizzaIngredientFactory" />
+			<role name="state" element="com.ramesh.gof.factory.pizzaa.CheesePizza::ingredientFactory:com.ramesh.gof.factory.pizzaa.PizzaIngredientFactory" />
+			<role name="Request()" element="com.ramesh.gof.factory.pizzaa.CheesePizza::prepare():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.ramesh.gof.factory.pizzaa.ClamPizza" />
+			<role name="State" element="com.ramesh.gof.factory.pizzaa.PizzaIngredientFactory" />
+			<role name="state" element="com.ramesh.gof.factory.pizzaa.ClamPizza::ingredientFactory:com.ramesh.gof.factory.pizzaa.PizzaIngredientFactory" />
+			<role name="Request()" element="com.ramesh.gof.factory.pizzaa.ClamPizza::prepare():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.ramesh.gof.factory.pizzaa.PepperoniPizza" />
+			<role name="State" element="com.ramesh.gof.factory.pizzaa.PizzaIngredientFactory" />
+			<role name="state" element="com.ramesh.gof.factory.pizzaa.PepperoniPizza::ingredientFactory:com.ramesh.gof.factory.pizzaa.PizzaIngredientFactory" />
+			<role name="Request()" element="com.ramesh.gof.factory.pizzaa.PepperoniPizza::prepare():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.ramesh.gof.factory.pizzaa.VeggiePizza" />
+			<role name="State" element="com.ramesh.gof.factory.pizzaa.PizzaIngredientFactory" />
+			<role name="state" element="com.ramesh.gof.factory.pizzaa.VeggiePizza::ingredientFactory:com.ramesh.gof.factory.pizzaa.PizzaIngredientFactory" />
+			<role name="Request()" element="com.ramesh.gof.factory.pizzaa.VeggiePizza::prepare():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.ramesh.gof.bridge.secondexample.Hammer" />
+			<role name="State" element="com.ramesh.gof.bridge.secondexample.Enchantment" />
+			<role name="state" element="com.ramesh.gof.bridge.secondexample.Hammer::enchantment:com.ramesh.gof.bridge.secondexample.Enchantment" />
+			<role name="Request()" element="com.ramesh.gof.bridge.secondexample.Hammer::wield():void" />
+			<role name="Request()" element="com.ramesh.gof.bridge.secondexample.Hammer::swing():void" />
+			<role name="Request()" element="com.ramesh.gof.bridge.secondexample.Hammer::unwield():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.ramesh.gof.bridge.secondexample.Sword" />
+			<role name="State" element="com.ramesh.gof.bridge.secondexample.Enchantment" />
+			<role name="state" element="com.ramesh.gof.bridge.secondexample.Sword::enchantment:com.ramesh.gof.bridge.secondexample.Enchantment" />
+			<role name="Request()" element="com.ramesh.gof.bridge.secondexample.Sword::wield():void" />
+			<role name="Request()" element="com.ramesh.gof.bridge.secondexample.Sword::swing():void" />
+			<role name="Request()" element="com.ramesh.gof.bridge.secondexample.Sword::unwield():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.ramesh.gof.prototype.HeroFactoryImpl" />
+			<role name="State" element="com.ramesh.gof.prototype.Beast" />
+			<role name="state" element="com.ramesh.gof.prototype.HeroFactoryImpl::beast:com.ramesh.gof.prototype.Beast" />
+			<role name="Request()" element="com.ramesh.gof.prototype.HeroFactoryImpl::createBeast():com.ramesh.gof.prototype.Beast" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.ramesh.gof.prototype.HeroFactoryImpl" />
+			<role name="State" element="com.ramesh.gof.prototype.Mage" />
+			<role name="state" element="com.ramesh.gof.prototype.HeroFactoryImpl::mage:com.ramesh.gof.prototype.Mage" />
+			<role name="Request()" element="com.ramesh.gof.prototype.HeroFactoryImpl::createMage():com.ramesh.gof.prototype.Mage" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.ramesh.gof.prototype.HeroFactoryImpl" />
+			<role name="State" element="com.ramesh.gof.prototype.Warlord" />
+			<role name="state" element="com.ramesh.gof.prototype.HeroFactoryImpl::warlord:com.ramesh.gof.prototype.Warlord" />
+			<role name="Request()" element="com.ramesh.gof.prototype.HeroFactoryImpl::createWarlord():com.ramesh.gof.prototype.Warlord" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy" />
+	<pattern name="Bridge" />
+	<pattern name="Template Method">
+		<instance>
+			<role name="AbstractClass" element="com.ramesh.gof.factory.pizzaa.PizzaStore" />
+			<role name="TemplateMethod()" element="com.ramesh.gof.factory.pizzaa.PizzaStore::orderPizza(java.lang.String):com.ramesh.gof.factory.pizzaa.Pizza" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.ramesh.gof.factory.pizzafm.PizzaStore" />
+			<role name="TemplateMethod()" element="com.ramesh.gof.factory.pizzafm.PizzaStore::orderPizza(java.lang.String):com.ramesh.gof.factory.pizzafm.Pizza" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.ramesh.gof.prototype.Beast" />
+			<role name="TemplateMethod()" element="com.ramesh.gof.prototype.Beast::clone():java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.ramesh.gof.prototype.Mage" />
+			<role name="TemplateMethod()" element="com.ramesh.gof.prototype.Mage::clone():java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.ramesh.gof.prototype.Warlord" />
+			<role name="TemplateMethod()" element="com.ramesh.gof.prototype.Warlord::clone():java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.ramesh.gof.composite.LetterComposite" />
+			<role name="TemplateMethod()" element="com.ramesh.gof.composite.LetterComposite::print():void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.ramesh.gof.templatemethod.barista.CaffeineBeverageWithHook" />
+			<role name="TemplateMethod()" element="com.ramesh.gof.templatemethod.barista.CaffeineBeverageWithHook::prepareRecipe():void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.ramesh.gof.templatemethod.barista.CaffeineBeverage" />
+			<role name="TemplateMethod()" element="com.ramesh.gof.templatemethod.barista.CaffeineBeverage::prepareRecipe():void" />
+		</instance>
+	</pattern>
+	<pattern name="Visitor" />
+	<pattern name="Proxy" />
+	<pattern name="Proxy2" />
+	<pattern name="Chain of Responsibility">
+		<instance>
+			<role name="Handler" element="com.ramesh.gof.chain.RequestHandler" />
+			<role name="successor" element="com.ramesh.gof.chain.RequestHandler::next:com.ramesh.gof.chain.RequestHandler" />
+		</instance>
+	</pattern>
+</system>
+
